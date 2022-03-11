@@ -1,0 +1,559 @@
+<!--
+
+                            Online HTML Compiler.
+                Code, Compile, Run and Debug HTML program online.
+Write your code in this editor and press "Run" button to execute it.
+
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flipkart UI clone </title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+* {
+user-select:none;
+box-sizing:border-box;
+scroll-behavior:smooth;
+tap-highlight-color:transparent;
+-webkit-tap-highlight-color:transparent;
+-webkit-box-sizing:border-box;
+-webkit-user-select:none;
+font-family:poppins;
+}
+body {
+margin:0;
+padding:0;
+position:absolute;
+width:100vw;
+height:100vh;
+font-family:poppins;
+background:#9B9AFF;
+}
+#top_bar {
+position:relative;
+width:100%;
+height:auto;
+background:hsla(218, 87%, 55%, 1);
+}
+#sidebar {
+position:relative;
+width:25px;
+top:-2px;
+left:11px;
+}
+#logo {
+position:relative;
+width:110px;
+height:35px;
+left:26px;
+top:5px;
+}
+#icon_1 {
+position:relative;
+float:right;
+right:60px;
+top:14px;
+}
+#cart {
+position:relative;
+float:right;
+height:20px;
+width:20px;
+top:13px;
+right:33px;
+transform:rotatey(180deg);
+}
+#login {
+position:relative;
+float:right;
+right:7px;
+top:12px;
+color:#fff;
+}
+#search_bar {
+position:relative;
+width:93%;
+height:32px;
+border:none;
+text-indent:25px;
+left:3.5%;
+border-radius:3px;
+top:10px;
+outline:none;
+}
+#search_bar::-placeholder {
+color:gray;
+}
+#main_sec {
+position:relative;
+background:#fff;
+}
+#categories {
+display:flex;
+width:100%;
+overflow:scroll;
+position:relative;
+}
+.category {
+position:relative;
+width:55px;
+height:55px;
+margin-left:5px;
+}
+.banner_img {
+width:100%;
+height:auto;
+transition:1s all ease-in;
+}
+.nav_img {
+position:relative;
+width:32vw;
+height:auto;
+}
+.nav_img:first-child {
+left:5px;
+}
+#alt_img {
+display:none;
+}
+.main_cnt {
+position:relative;
+top:-10px;
+}
+.label_2 {
+color:#fff;
+position:relative;
+padding:10px;
+top:5px;
+}
+.btn {
+position:relative;
+left:75vw;
+top:-45px;
+width:67px;
+height:30px;
+background:#ff6227;
+border:none;
+color:#fff;
+}
+.product_card {
+position:relative;
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+flex-wrap:wrap;
+flex-grow:;
+overflow:scroll;
+width:100%;
+height:;
+margin:0;
+padding:0;
+top:-30px;
+}
+.inner_cnt {
+position:relative;
+width:50vw;
+text-align:center;
+background:#fff;
+border:0.7px solid lightgray;
+}
+.product_img {
+width:50vw;
+height:auto;
+}
+.product_img_1 {
+width:40vw;
+height:auto;
+}
+@media only screen and (min-width: 900px) {
+.banner_img {
+height:500px;
+}
+}
+@media only screen and (min-width: 800px) {
+.category {
+margin-left:30px;
+height:100px;
+width:100px;
+}
+#alt_img {
+display: inline-block;
+}
+.nav_img {
+width:24vw;
+}
+#sidebar {
+width:50px;
+top:5px;
+left:11px;
+}
+#logo {
+width:150px;
+height:55px;
+left:56px;
+top:5px;
+}
+#search_bar {
+height:50px;
+border-radius:10px;
+}
+#icon_1 {
+right:110px;
+top:14px;
+}
+#cart {
+height:20px;
+width:20px;
+top:13px;
+right:73px;
+}
+#login {
+right:47px;
+}
+.inner_cnt {
+position:relative;
+width:23vw;
+margin-left:calc(2vw / 4);
+text-align:center;
+background:#fff;
+border:0.7px solid lightgray;
+}
+.product_img {
+width:23vw;
+height:auto;
+}
+.product_img_1 {
+width:23vw;
+height:auto;
+}
+.btn {
+left:85vw;
+top:-45px;
+}
+.type_5 {
+font-size:.2.6rem;
+top:10px;
+}
+.type_6 {
+font-size:2.3rem;
+top:15px;
+}
+.img_6 {
+position: relative;
+top:25px;
+}
+}
+.type_3 {
+font-size:0.7.6rem;
+}
+.type_4 {
+font-size:0.8rem;
+color:#009d00;
+}
+.cnt_6 {
+position:relative;
+display:flex;
+flex-direction:row;
+}
+.img_6 {
+width:33vw;
+height:auto;
+}
+.type_5 {
+font-size:0.9rem;
+position:relative;
+left:10px;
+}
+.type_6 {
+font-size:0.8rem;
+position:relative;
+left:10px;
+}
+.main_cnt_2 {
+position:relative;
+top:-15px;
+background:#fff;
+}
+.img_7 {
+position:relative;
+width:98vw;
+height:auto;
+left:1vw;
+}
+.raw_img_cnt {
+width:100vw;
+height:auto;
+position:relative;
+}
+.img_8 {
+width:100%;
+height:auto;
+}
+.main_cnt_3 {
+display:flex;
+flex-direction:row;
+}
+.ads {
+width:49vw;
+height:auto;
+}
+.ads_1 {
+width:100vw;
+height:auto;
+}
+#back_2_top {
+position:relative;
+height:35px;
+width:98vw;
+border-radius:10px;
+background:#83AFED;
+text-align:center;
+left:1vw;
+top:-5px;
+}
+#b2t {
+color:#06162D;
+text-decoration:none;
+text-align:center ;
+top:6px;
+position:relative;
+}
+
+</style>
+</head>
+<body>
+<div id="wrapper">
+<section class="section" id="top_bar">
+<img src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjRkZGIiBoZWlnaHQ9IjM2IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMyAxOGgxOHYtMkgzdjJ6bTAtNWgxOHYtMkgzdjJ6bTAtN3YyaDE4VjZIM3oiLz48L3N2Zz4=" alt="" class="icon" id="sidebar" />
+<span class="text" id="login">Login</span>
+<img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fk-explorePlus-c5de64.png" alt="" id="logo" />
+<img src="https://i.ibb.co/JcFsvpP/shopping-cart.png" alt="" id="cart" />
+<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxMiAxNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Im0yNTQuMTIgNTMuNjE3Yy4wMjkgMS4wMS4xMDEgMi4zODIuMTUgMi42OC4wMjUuMTUyLjE1Ni4yNjMuMzEuMjYzbC42NzIuMDIxYy4xNTQgMCAuMTc1LS4xMTEuMTk5LS4yNjQuMDQ5LS4zMDQuMTIyLTEuNjkyLjE1MS0yLjY5NyAxLS4wMjkgMi4zOTItLjEwMiAyLjY5Ny0uMTUxLjE1My0uMDI0LjI2NC0uMDQ1LjI2NC0uMTk5bC0uMDIxLS42NzJjMC0uMTU0LS4xMTEtLjI4NS0uMjYzLS4zMS0uMjk4LS4wNDktMS42NjktLjEyMS0yLjY4LS4xNS0uMDMxLS45ODYtLjEwMi0yLjMxMi0uMTQ5LTIuNjE1LS4wMjQtLjE1My0uMDQ0LS4yNjYtLjItLjI2NmwtLjY2OS0uMDIxYy0uMTU1IDAtLjI4Ni4xMTItLjMxLjI2NC0uMDQ4LjI5OS0uMTE5IDEuNjQxLS4xNDkgMi42NC0uOTk4LjAzLTIuMzQuMTAyLTIuNjQuMTQ5LS4xNTMuMDI0LS4yNjQuMTU2LS4yNjQuMzFsLjAyMS42NjljMCAuMTU1LjExMy4xNzYuMjY2LjIuMzAzLjA0NyAxLjYyOS4xMTggMi42MTUuMTQ5bTUuNzY1IDYuMzgzaC05LjYyMWMtLjQxMyAwLS43NjUtLjI2Ny0uODMxLS42MzMtLjE2Ni0uOTEzLS40MzUtNC43MDEtLjQzNS02Ljg2NyAwLTIuMTA0LjI3My01LjkzMi40MzgtNi44NjQuMDY1LS4zNjcuNDE4LS42MzYuODMyLS42MzZoOS42MTNjLjQxNiAwIC40NzEuMjcxLjUzNS42NC4xNjUuOTU2LjQ0MiA0LjgzNS40NDIgNi44NiAwIDIuMTEzLS4yNzIgNS45MzUtLjQzOCA2Ljg2NS0uMDY1LjM2Ny0uMTIuNjM1LS41MzQuNjM1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjQ5LTQ1KSIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=" id="icon_1" />
+<br />
+<input type="search" placeholder="search for Products,Brands and More" id="search_bar" />
+<br /><br />
+</section>
+<section id="main_sec">
+<div class="container" id="categories">
+<img src="https://rukminim1.flixcart.com/flap/132/124/image/e3e79f5c3cbea9fd.jpg?q=90" class="category" alt="" id="cg">
+<img src="https://rukminim1.flixcart.com/flap/132/124/image/21f8a81a725f8388.jpg?q=90" class="category" alt=""  />
+<img src="https://rukminim1.flixcart.com/flap/132/124/image/570ea9.jpg?q=90" class="category" alt="" />
+<img src="https://rukminim1.flixcart.com/flap/132/124/image/42f9a853f9181279.jpg?q=90" class="category" alt="" />
+<img src="https://rukminim1.flixcart.com/flap/132/124/image/0fcff2bef81c354f.jpg?q=90" class="category" alt="" />
+<img src="https://rukminim1.flixcart.com/flap/132/124/image/0574df.jpg?q=90" class="category" alt="" />
+<img src="https://rukminim1.flixcart.com/flap/132/124/image/222e7382a2c2bd72.jpg?q=90" class="category" alt="" >
+</div>
+<div id="banner">
+<img src="https://rukminim1.flixcart.com/flap/750/350/image/5bef707651c9601e.jpeg?q=20" class="banner_img" alt="" />
+<img src="https://rukminim1.flixcart.com/flap/750/350/image/7339c0c88282ecc7.png?q=20" class="banner_img" alt="" />
+<img src="https://rukminim1.flixcart.com/flap/750/350/image/c937a4302b0427fb.jpeg?q=20" class="banner_img" alt="" />
+<img src="https://rukminim1.flixcart.com/flap/750/350/image/2b26970db5012c66.jpg?q=20" class="banner_img" alt="" />
+</div>
+<div id="sec_2">
+<img src="https://rukminim1.flixcart.com/flap/240/256/image/4ccccd96334927e1.jpg?q=60" alt="" class="nav_img" />
+<img src="https://rukminim1.flixcart.com/flap/240/256/image/b14b72c051a58b56.jpg?q=60" alt="" class="nav_img" />
+<img src="https://rukminim1.flixcart.com/flap/240/256/image/9d8dbbf5a2a5d16b.jpg?q=60" alt="" class="nav_img" />
+<img src="https://rukminim1.flixcart.com/flap/240/256/image/ce226db451077b25.jpg?q=60" alt="" class="nav_img" id="alt_img" />
+</div>
+<div class="main_cnt" style="background: linear-gradient(100deg, hsla(238, 100%, 71%, 1) 50%, hsla(295, 100%, 84%, 1) 50%);">
+<p class="label_2">Best offers on clothes</p>
+<input type="button" class="btn" value="See all" />
+<div class="product_card">
+<section class="inner_cnt">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5mci1lHQOlFraubVGQg0-bZnHkFD4AX4G1lWVq8l5qajOcs80aVIG3qeBiPuFaMAN0f7xV8JA&usqp=CAc" alt="" class="product_img" />
+<br />
+<span class="label type_3">Marron color frock</span>
+<br />
+<span class="label type_4">upto 40% off</span>
+</section>
+<section class="inner_cnt">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYtjBsvR9CK81aW0AXCC_fglfPN74y3OsLvEY-deo0JJAc7EUV5HUfZ8wiocUi7NGyU1lCqtl_&usqp=CAc" alt="" class="product_img" />
+<br />
+<span class="label type_3">100% cotton shirt</span>
+<br />
+<span class="label type_4"><del>₹ 699 </del><span> ₹499</span></span>
+</section>
+<section class="inner_cnt">
+<img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQF2VISI5blwJsUr8Ho7toiksPYSVJZ6ypPAUFwUL8pthSUqDmVAcYOqwgvPwOCFPQo9CSaD7MpaV9MH30i1wbsdZMlkFpTg-8lDK_yn07lqxfV0HolhIMJ&usqp=CAc" alt="" class="product_img" />
+<br />
+<span class="label type_3">Exclusive wedding gown</span>
+<br />
+<span class="label type_4"><del>₹1699</del><span> ₹1349</span></span>
+</section>
+<section class="inner_cnt">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRDmAI3isd1YpoqZwjY8xlaDB0aXUzbauCGxEJxB1-bDhVUNG8Khrt0ipJYiIAhbP9huUIV9j1&usqp=CAc" alt="" class="product_img" />
+<br />
+<span class="label type_3">Red-black full T-shirt</span>
+<br />
+<span class="label type_4">upto 60% off</span>
+</section>
+</div>
+</div>
+<div class="main_cnt_2">
+<span class="label type_5">Best of season sale</span><br />
+<span class="label type_6">Sponsered</span>
+<div class="cnt_6">
+<img src="https://rukminim1.flixcart.com/flap/240/256/image/ce226db451077b25.jpg?q=60" alt="" class="img_6" />
+<img src="https://rukminim1.flixcart.com/flap/240/320/image/ff03863954368bb7.jpg?q=60" alt="" class="img_6" />
+<img src="https://rukminim1.flixcart.com/flap/240/320/image/b4cf5e1404be61d7.jpg?q=60" alt="" class="img_6" />   
+</div>
+</div>
+<hr>
+<div class="main_cnt_2" style="top:1px">
+<span class="label type_5">Featured brand</span><br />
+<span class="label type_6">Sponsered</span>
+<div class="cnt_6">
+<img src="https://rukminim1.flixcart.com/flap/688/370/image/4310e22e6c4db3e2.jpg?q=60" alt="" class="img_7" />   
+</div>
+</div>
+
+<div class="main_cnt" style="background:linear-gradient(110deg,#ff859a 50%,#ff2349 50%
+);">
+<p class="label_2">Deals of the day</p>
+<input type="button" class="btn" value="See all" />
+<div class="product_card">
+<section class="inner_cnt">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZSF2IZcbLxLR7T7hlvI0jUD2zPYnNEep6ig&usqp=CAU" alt="" class="product_img" />
+<br />
+<span class="label type_3">Pink flower bedsheer</span>
+<br />
+<span class="label type_4">upto 60% off</span>
+</section>
+<section class="inner_cnt">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGhH6KA3Sj4vlOwY1tTf9ee3rsb-gxRtdbRQ&usqp=CAU" alt="" class="product_img" />
+<br />
+<span class="label type_3">Blue dotted shirt</span>
+<br />
+<span class="label type_4"><del>₹ 899 </del><span> ₹499</span></span>
+</section>
+<section class="inner_cnt">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ5AiPpSTM8xSI-LIf7b_0Q8OLbMmi7g-zfg&usqp=CAU" alt="" class="product_img" />
+<br />
+<span class="label type_3">Pure leather belt</span>
+<br />
+<span class="label type_4"><del>₹699</del><span> ₹349</span></span>
+</section>
+<section class="inner_cnt">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQipLGSqxiIxmAtnxQQ7gvnMeEvXaztNy377g&usqp=CAU" alt="" class="product_img" />
+<br />
+<span class="label type_3">Vivo earphones</span>
+<br />
+<span class="label type_4">upto 30% off</span>
+</section>
+</div>
+</div>
+<div class="main_cnt_2" style="top:1px">
+<span class="label type_5">Insurance on flipkart</span><br />
+<span class="label type_6">Sponsered</span>
+<div class="cnt_6">
+<img src="https://rukminim1.flixcart.com/flap/720/320/image/b415fb5a96dcfd1c.jpg?q=60" alt="" class="img_7" />   
+</div>
+</div>
+<div class="raw_img_cnt">
+<img src="https://i.ibb.co/0ZmLYmJ/IMG-20210915-074117.jpg" alt="" class="img_8" />
+</div>
+<div class="main_cnt_2" style="top:2px">
+<span class="label type_5">Featured</span><br />
+<span class="label type_6">based on your recent activity</span>
+<div class="cnt_6">
+<img src="https://rukminim1.flixcart.com/flap/360/512/image/96d33ead0ddaca3d.jpg?q=60" alt="" class="ads" />
+<img src="https://rukminim1.flixcart.com/flap/360/512/image/470074a808e7a2aa.jpg?q=60" alt="" class="ads" />   
+</div>
+</div>
+<div class="raw_img_cnt">
+<img src="https://i.ibb.co/mHTzbyW/IMG-20210915-080242.jpg" alt="" class="img_8" />
+</div>
+<div class="raw_img_cnt">
+<img src="https://i.ibb.co/9T2JBxB/IMG-20210915-080804.jpg" alt="" class="img_8" />
+</div>
+<div class="raw_img_cnt">
+<img src="https://i.ibb.co/qrMYmQN/IMG-20210915-081102.jpg" alt="" class="img_8" />
+</div>
+
+<div class="main_cnt" style="background: linear-gradient(110deg, hsla(0, 100%, 67%, 1) 50%, hsla(0, 50%, 89%, 1) 50%)">
+<p class="label_2">Trending smartphones</p>
+<input type="button" class="btn" value="See all" />
+<div class="product_card">
+<section class="inner_cnt">
+<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTL1NmoGPQxUr9EfPpihoqNAWO66fdOQ_wqI-9_wHqNBdhk8-DwCKn6Ejio6RNlBPVdElxr9DHNLo63xlWcB_0BUhKsSeQN3piCjzQxyBXad9jCcUI1Zk1l&usqp=CAE" alt="" class="product_img_1" />
+<br />
+<span class="label type_3">Samsung galaxy Z fold3</span>
+<br />
+<span class="label type_4">₹ 1,57,999</span>
+</section>
+<section class="inner_cnt">
+<img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSH1Qca-geQC9OU6YhkWK1QPdIT5Yf-y5IdrCdVITgCjQ8TsobbEz_mUU4-5jezN9s7fcgscRZOJJ9HsUeIXcyxfpBRUJjYGGIHhijXHjPV&usqp=CAE" alt="" class="product_img_1" />
+<br />
+<span class="label type_3">iphone 6 plus</span>
+<br />
+<span class="label type_4">₹ 6,999</span>
+</section>
+<section class="inner_cnt">
+<img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRTUNCckn-yJIbiRbTjQ2tCX20Ac8tiTi2xOrrAxTcrG-ltjg9CO554ZW79M4_MY_GFMtMpfjPonuSl5FqNpk90WA_Wre5VRqtNViatLd8Y6erZfNme_HmJ&usqp=CAE" alt="" class="product_img_1" />
+<br />
+<span class="label type_3">One plus 9 5G</span>
+<br />
+<span class="label type_4">₹ 54,999</span>
+</section>
+<section class="inner_cnt">
+<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ5QSZpYGwHR2yv_jKt2oAMPIS2fdFa20dMuosdxnB7Bf1s8dzc1SOlgfD9K38x7rTqT9KG3X8pKnirqgqviF0VfiqL5V8XM-wjMDE2NiP_tKEgh4x0puoQKA&usqp=CAE" alt="" class="product_img_1" />
+<br />
+<span class="label type_3">Samsung galaxy M20</span>
+<br />
+<span class="label type_4">₹ 14,999</span>
+</section>
+</div>
+</div>
+<div class="main_cnt_2" style="top:-10px">
+<span class="label type_5">Refurbished smartphone</span><br />
+<span class="label type_6">Sponsored</span>
+<div class="cnt_6">
+<img src="https://i.ibb.co/Ss8FxCL/IMG-20210915-082432.jpg" alt="" class="ads_1" />
+</div>
+</div>
+<div class="raw_img_cnt">
+<img src="https://i.ibb.co/ykhRfrB/IMG-20210915-083633.jpg" alt="" class="img_8" />
+</div>
+<div class="raw_img_cnt" style="top:6px">
+<img src="https://rukminim1.flixcart.com/flap/688/370/image/9adaa782aaf0d38e.jpg?q=90" alt="" class="img_8" />
+</div>
+<div class="raw_img_cnt" style="top:5px;">
+<img src="https://rukminim1.flixcart.com/flap/720/320/image/b415fb5a96dcfd1c.jpg?q=60" alt="" class="img_8" />
+</div>
+<div class="raw_img_cnt" style="top:-9px">
+<img src="https://rukminim1.flixcart.com/flap/720/320/image/ebff31958f9a7d8c.jpg?q=60" alt="" class="img_8" />
+</div>
+<div id="back_2_top"><a href="#" id="b2t">Back to top</a></div>
+</section>
+</div>
+<script>
+var a = 0;
+var autoScroll=()=>{
+var b;
+var c = document.getElementsByClassName("banner_img");
+for (b = 0; b < c.length; b++) {
+c[b].style.display = "none";  
+}  
+a++;
+if (a > c.length) {
+a = 1
+}    
+c[a-1].style.display = "block";
+setTimeout(autoScroll,2000);
+}
+autoScroll();
+</script>
+</body>
+</html>
+
+
+
+
