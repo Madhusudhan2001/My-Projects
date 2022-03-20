@@ -1,0 +1,173 @@
+<!-- Created by Madhu Sudhan-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+ 
+    </style>
+
+<style>
+*{
+      padding:0px;
+    margin:0;
+    
+                }
+a{color:#d1f3ff;text-decoration:none}
+body{
+    padding:0px;
+    margin:0;
+    background:#fff;
+}
+h1{font-family:cursive;}
+header, footer{
+        width:100%;
+    height:170px;
+    color:white;
+    background: black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-family: 'Oxanium', sans-serif;
+                }
+header a{
+                padding:3px 16px;
+                margin:4px;
+                border:2px solid;
+                border-radius:5px;
+                font-family:sans-serif;
+                }
+header a:hover{
+                background:#d1f3ff;
+                color:black;}
+footer{height:70px;}
+div#memory_board{
+    background: lightgray;
+    border:black 1px solid;
+    box-shadow:inset 5px 5px 10px white;
+    width:800px;
+    height:540px;
+    padding:24px;
+    margin:0px auto;
+}
+div#memory_board > div{
+        color: #fff;
+    border: transparent 3px solid;
+    box-shadow:6px 6px 10px black,
+         inset 6px 6px 10px black,
+              -6px -6px 10px white,
+        inset -6px -6px 10px white;
+    width:66px;
+    height:69px;
+    float:left;
+    margin:10px;
+    padding:20px;
+    font-size:64px;
+    cursor:pointer;
+    text-align:center;
+}
+
+@media only screen and (max-width: 960px){
+*{box-sizing: border-box;    }
+div#memory_board{
+    width:100%;
+    height:460px;
+    padding:20px;
+    margin:0px auto;
+}
+div#memory_board > div{
+    width:21px;
+    height:21px;
+    float:left;
+    margin:10px;
+    padding:20px;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+    text-align:center;
+}
+    }
+</style>   
+    
+<script>
+var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
+var memory_values = [];
+var memory_tile_ids = [];
+var tiles_flipped = 0;
+Array.prototype.memory_tile_shuffle = function(){
+    var i = this.length, j, temp;
+    while(--i > 0){
+        j = Math.floor(Math.random() * (i+1));
+        temp = this[j];
+        this[j] = this[i];
+        this[i] = temp;
+    }
+}
+function newBoard(){
+    tiles_flipped = 0;
+    var output = '';
+    memory_array.memory_tile_shuffle();
+    for(var i = 0; i < memory_array.length; i++){
+        output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
+    }
+    document.getElementById('memory_board').innerHTML = output;
+}
+function memoryFlipTile(tile,val){
+    if(tile.innerHTML == "" && memory_values.length < 2){
+        tile.style.background = 'black';
+        tile.innerHTML = val;
+        if(memory_values.length == 0){
+            memory_values.push(val);
+            memory_tile_ids.push(tile.id);
+        } else if(memory_values.length == 1){
+            memory_values.push(val);
+            memory_tile_ids.push(tile.id);
+            if(memory_values[0] == memory_values[1]){
+                tiles_flipped += 2;
+                // Clear both arrays
+                memory_values = [];
+                memory_tile_ids = [];
+                // Check to see if the whole board is cleared
+                if(tiles_flipped == memory_array.length){
+                    alert("Congragulations!!!\n\nBoard cleared... generating new board");
+                    document.getElementById('memory_board').innerHTML = "";
+                    newBoard();
+                }
+            } else {
+                function flip2Back(){
+                    // Flip the 2 tiles back over
+                    var tile_1 = document.getElementById(memory_tile_ids[0]);
+                    var tile_2 = document.getElementById(memory_tile_ids[1]);
+                    tile_1.style.background = 'url(tile_bg.jpg) no-repeat';
+                    tile_1.innerHTML = "";
+                    tile_2.style.background = 'url(tile_bg.jpg) no-repeat';
+                    tile_2.innerHTML = "";
+                    // Clear both arrays
+                    memory_values = [];
+                    memory_tile_ids = [];
+                }
+                setTimeout(flip2Back, 700);
+            }
+        }
+    }
+}
+</script>
+</head>
+<body>
+<header>
+<h1>Matching Game</h1>
+<br>
+<h4>Developed By:</h4>
+<h3>Madhu Sudhan</h3>
+</header>
+<div id="memory_board"></div>
+<footer>
+<div>
+</footer>
+<script>newBoard();</script>
+</body>
+</html>
